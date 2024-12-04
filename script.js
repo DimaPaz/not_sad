@@ -13,5 +13,5 @@ document.getElementById("animateBtn").addEventListener("click", function () {
         // Show the YouTube video
         youtubeVideo.src = "https://www.youtube.com/embed/7fup-Ik5trU?autoplay=1"; // Replace with your video link
         videoContainer.classList.remove("hidden");
-    }, 3500);
+    }, 6500);
 });
