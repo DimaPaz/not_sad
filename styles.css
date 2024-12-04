@@ -1,0 +1,138 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.container {
+    width: 100%;
+    max-width: 600px;
+    padding: 20px;
+}
+
+.animate-button {
+    background-color: #ff6f61;
+    color: white;
+    font-size: 18px;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    width: 100%;
+    max-width: 300px;
+}
+
+.animate-button:hover {
+    transform: scale(1.1);
+    background-color: #ff4b4b;
+}
+
+.heart-container {
+    margin: 20px 0;
+}
+
+.heart {
+    width: 80px;
+    height: 80px;
+    background-color: #ff6f61;
+    position: relative;
+    display: inline-block;
+    transform: rotate(-45deg);
+    animation: beat 1.5s ease-in-out infinite;
+}
+
+.heart::before,
+.heart::after {
+    content: '';
+    width: 80px;
+    height: 80px;
+    background-color: #ff6f61;
+    position: absolute;
+    border-radius: 50%;
+}
+
+.heart::before {
+    top: -40px;
+    left: 0;
+}
+
+.heart::after {
+    top: 0;
+    left: 40px;
+}
+
+.hidden {
+    display: none;
+}
+
+.video-container {
+    margin-top: 20px;
+}
+
+iframe {
+    width: 100%;
+    max-width: 560px;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    border: 0;
+    border-radius: 10px;
+}
+
+@keyframes beat {
+    0%, 100% {
+        transform: scale(1) rotate(-45deg);
+    }
+    50% {
+        transform: scale(1.2) rotate(-45deg);
+    }
+}
+
+/* Адаптація для мобільних пристроїв */
+@media (max-width: 768px) {
+    .animate-button {
+        font-size: 16px;
+        padding: 10px 20px;
+    }
+
+    .heart {
+        width: 60px;
+        height: 60px;
+    }
+
+    .heart::before,
+    .heart::after {
+        width: 60px;
+        height: 60px;
+    }
+
+    iframe {
+        width: 100%;
+        height: auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .animate-button {
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+
+    .heart {
+        width: 50px;
+        height: 50px;
+    }
+
+    .heart::before,
+    .heart::after {
+        width: 50px;
+        height: 50px;
+    }
+}
